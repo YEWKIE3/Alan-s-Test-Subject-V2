@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
     transition: background-color 0.5s, color 0.5s;
+    padding-bottom: 50px;
 }
 
 /* Navigation */
@@ -59,6 +60,14 @@ section.visible {
     transform: translateY(0);
 }
 
+/* About Me text */
+.fancy-text {
+    font-size: 2.2rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    margin-top: 20px;
+}
+
 /* Cards */
 .cards {
     display: flex;
@@ -69,17 +78,18 @@ section.visible {
 }
 
 .card {
-    background: #ff9800;
-    color: #fff;
+    text-decoration: none;
+    color: white;
+    background: #1e1e1e;
     padding: 30px;
-    border-radius: 10px;
-    transition: transform 0.3s, background 0.3s;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .card:hover {
-    transform: scale(1.1);
-    background: #ffa733;
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* Buttons */
@@ -103,10 +113,4 @@ footer {
     background: #222;
     color: #fff;
     padding: 20px;
-}
-.fancy-text {
-    font-size: 2.2rem;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-    margin-top: 20px;
 }
