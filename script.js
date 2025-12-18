@@ -1,137 +1,68 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    transition: background-color 0.5s, color 0.5s;
-    padding-bottom: 50px;
-}
+    // Scroll fade-in
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + window.innerHeight * 0.8;
+        sections.forEach(section => {
+            if (scrollPos > section.offsetTop) {
+                section.classList.add('visible');
+            }
+        });
+    });
 
-/* Navigation */
-nav {
-    position: sticky;
-    top: 0;
-    background: #222;
-    padding: 10px 0;
-    z-index: 1000;
-}
+    // Buttons
+    const colorBtn = document.getElementById('colorBtn');
+    const textBtn = document.getElementById('textBtn');
+    const alertBtn = document.getElementById('alertBtn');
+    const quoteBtn = document.getElementById('quoteBtn');
+    const counterBtn = document.getElementById('counterBtn');
+    const popup = document.getElementById('popupMessage');
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
+    // Function to show pop-up messages
+    function showPopup(message) {
+        popup.textContent = message;
+        popup.classList.add('show');
 
-nav ul li {
-    margin: 0 15px;
-}
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 2500); // disappears after 2.5 seconds
+    }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+    // Background color
+    colorBtn.addEventListener('click', () => {
+        const randomBg = `hsl(${Math.floor(Math.random() * 360)}, 70%, 80%)`;
+        document.body.style.backgroundColor = randomBg;
+    });
 
-nav ul li a:hover {
-    color: #ff9800;
-}
+    // Text color
+    textBtn.addEventListener('click', () => {
+        const randomText = `hsl(${Math.floor(Math.random() * 360)}, 50%, 20%)`;
+        document.body.style.color = randomText;
+    });
 
-/* Sections */
-section {
-    min-height: 100vh;
-    padding: 50px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
+    // Alert (popup)
+    alertBtn.addEventListener('click', () => {
+        showPopup("Surprise! 🎉");
+    });
 
-/* Fade-in on scroll */
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    // Random quotes (popup)
+    const quotes = [
+        "Keep coding, keep learning!",
+        "Experiment. Fail. Try again.",
+        "Creativity is intelligence having fun.",
+        "Web design is your playground."
+    ];
+    quoteBtn.addEventListener('click', () => {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        showPopup(randomQuote);
+    });
 
-/* About Me text */
-.fancy-text {
-    font-size: 2.2rem;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-style: italic;
-    margin-top: 20px;
-}
+    // Click counter
+    let count = 0;
+    counterBtn.addEventListener('click', () => {
+        count++;
+        counterBtn.textContent = `Click Me! (${count})`;
+    });
 
-/* Cards */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.card {
-    text-decoration: none;
-    color: white;
-    background: #1e1e1e;
-    padding: 30px;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* Buttons */
-button {
-    margin: 10px;
-    padding: 15px 25px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background: #ff9800;
-    transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: #fff;
-    padding: 20px;
-}
-
-/* Popup messages */
-.popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #ff9800;
-    color: #222;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 10000;
-    pointer-events: none;
-}
-.popup.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+});
