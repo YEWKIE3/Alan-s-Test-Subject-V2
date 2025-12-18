@@ -23,7 +23,3 @@ colorBtn.addEventListener('click', () => {
     const randomText = `hsl(${Math.floor(Math.random() * 360)}, 50%, 20%)`;
     document.body.style.color = randomText;
 });
-
-alertBtn.addEventListener('click', () => {
-    alert("You found me! 🎉");
-});
