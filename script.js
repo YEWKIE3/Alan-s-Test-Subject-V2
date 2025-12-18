@@ -1,4 +1,4 @@
-// Quotes array with explanations
+// Array of quotes with their explanations
 const quotes = [
     { 
         text: "I’m facing what scares me and asking for truth without hiding.", 
@@ -34,7 +34,7 @@ quoteBtn.addEventListener('click', () => {
     quoteDisplay.classList.remove("fade");
     void quoteDisplay.offsetWidth; // trigger reflow for animation
     quoteDisplay.classList.add("fade");
-    
+
     // Clear previous explanation
     explanationDisplay.innerHTML = "";
 });
