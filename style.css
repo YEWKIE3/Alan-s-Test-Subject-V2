@@ -16,12 +16,18 @@ header p {
     margin-bottom: 40px;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 button {
     background-color: #1db954;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 10px;
     cursor: pointer;
     font-size: 1em;
     border-radius: 5px;
