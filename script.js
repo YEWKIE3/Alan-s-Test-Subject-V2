@@ -1,6 +1,5 @@
-// Scroll fade-in for sections
+// Fade-in on scroll
 const sections = document.querySelectorAll('section');
-
 window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY + window.innerHeight * 0.8;
     sections.forEach(section => {
@@ -12,32 +11,29 @@ window.addEventListener('scroll', () => {
 
 // Buttons
 const colorBtn = document.getElementById('colorBtn');
+const textBtn = document.getElementById('textBtn');
+const alertBtn = document.getElementById('alertBtn');
+const quoteBtn = document.getElementById('quoteBtn');
+const counterBtn = document.getElementById('counterBtn');
 
-
+// Background color
 colorBtn.addEventListener('click', () => {
-    // Random background color
     const randomBg = `hsl(${Math.floor(Math.random() * 360)}, 70%, 80%)`;
     document.body.style.backgroundColor = randomBg;
-
-    // Random text color
-    const randomText = `hsl(${Math.floor(Math.random() * 360)}, 50%, 20%)`;
-    document.body.style.color = randomText;
 });
-// Text color button
-const textBtn = document.getElementById('textBtn');
+
+// Text color
 textBtn.addEventListener('click', () => {
     const randomText = `hsl(${Math.floor(Math.random() * 360)}, 50%, 20%)`;
     document.body.style.color = randomText;
 });
 
-// Alert button
-const alertBtn = document.getElementById('alertBtn');
+// Alert
 alertBtn.addEventListener('click', () => {
     alert("Surprise! 🎉");
 });
 
-// Random quote button
-const quoteBtn = document.getElementById('quoteBtn');
+// Random quotes
 const quotes = [
     "Keep coding, keep learning!",
     "Experiment. Fail. Try again.",
@@ -49,8 +45,7 @@ quoteBtn.addEventListener('click', () => {
     alert(randomQuote);
 });
 
-// Click counter button
-const counterBtn = document.getElementById('counterBtn');
+// Click counter
 let count = 0;
 counterBtn.addEventListener('click', () => {
     count++;
