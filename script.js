@@ -27,8 +27,8 @@ const quotes = [
     quote: "Are you searching for purpose? Then write something, yeah it might be worthless ~Kitchen Sink (Regional at Best, 2011)",
     explanation: "This is important because its saying that your purpose is found in creating something that only you understand, and it doesn't matter if someone else thinks it's worthless, as long as it has meaning to you, personally."
   },
-  { 
-    quote: "While you're doing fine, there's some people and I who have a really tough time getting through this life so excuse us while we sing to the sky” ~Screen (Vessel, 2013).",
+ { 
+  quote: "While you're doing fine, there's some people and I who have a really tough time getting through this life so excuse us while we sing to the sky” ~Screen (Vessel, 2013).",
     explanation: "You're not the only one having trouble with life, and this is trying to remind you of that, and to let you know that it's okay to not be okay."
   },
   { 
