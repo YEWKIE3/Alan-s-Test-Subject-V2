@@ -32,9 +32,10 @@ const quotes = [
 const button = document.getElementById("quoteBtn");
 const quoteText = document.getElementById("quoteText");
 const explanationText = document.getElementById("explanationText");
-
 button.addEventListener("click", () => {
   const random = Math.floor(Math.random() * quotes.length);
-  quoteText.innerText = "Quote: " + quotes[random].quote;
-  explanationText.innerText = "Explanation: " + quotes[random].explanation;
+  quoteText.innerHTML = "<strong>Quote:</strong> " + quotes[random].quote;
+  explanationText.innerHTML = "<strong>Explanation:</strong> " + quotes[random].explanation;
+});
+
 });
