@@ -1,28 +1,63 @@
-// Quotes array with explanations
+// Quotes array with explanations (no apostrophes)
 const quotes = [
     { 
-        text: "And we're dying with every step we take, we're dying with every breath we make.” ~March to the Sea (Self Titled, 2009)", 
-        explanation: "From the time we're born, we're already dying. We are not guaranteed the next step or breath, so we must live fully while we're alive."
+        text: "We are dying with every step we take and every breath we make. March to the Sea, Self Titled 2009", 
+        explanation: "From birth we are already dying. Live fully while you can."
     },
     { 
-        text: "Nothing kills a man faster than his own head” ~Trapdoor (Self Titled, 2009)", 
-        explanation: "We're often the biggest obstacle to our own success and happiness."
+        text: "Nothing kills a man faster than his own head. Trapdoor, Self Titled 2009", 
+        explanation: "We are often the biggest obstacle to our own success."
     },
     { 
-        text: "Please don't be afraid of what your soul is really thinking” ~Isle of Flightless Birds (Self Titled, 2009)", 
-        explanation: "It's okay if your thoughts and beliefs differ from others; trust your own perspective."
+        text: "Please do not be afraid of what your soul is thinking. Isle of Flightless Birds, Self Titled 2009", 
+        explanation: "Trust your own perspective even if it differs from others."
     },
     { 
-        text: "I don't wanna be heard; I want to be listened to” ~Forest (Regional at Best, 2011)", 
-        explanation: "True communication happens when people genuinely listen, not just hear your words."
+        text: "I do not want to be heard; I want to be listened to. Forest, Regional at Best 2011", 
+        explanation: "True communication happens when people genuinely listen."
     },
     { 
-        text: "We all are stranger creatures than when we all started out as kids, culture forbids” ~Glowing Eyes (Regional at Best, 2011)", 
-        explanation: "Embrace your unique self, even if society doesn't understand or allow it."
+        text: "We all are stranger creatures than when we started as kids, culture forbids. Glowing Eyes, Regional at Best 2011", 
+        explanation: "Embrace your uniqueness even if society does not understand."
     },
     { 
-        text: "Are you searching for purpose? Then write something, yeah it might be worthless” ~Kitchen Sink (Regional at Best, 2011)", 
-        explanation: "Purpose can be found in creating something meaningful to you, even if others think it's worthless."
+        text: "Are you searching for purpose? Then write something, it might be worthless. Kitchen Sink, Regional at Best 2011", 
+        explanation: "Purpose is found in creating something meaningful to you."
     },
     { 
-        text: "While you're doing fine, there's some people and I who have a really tough time getting through this life so excuse us while we sing
+        text: "While some are doing fine, some have a really tough time getting through life so excuse us while we sing to the sky. Screen, Vessel 2013", 
+        explanation: "Life can be hard for everyone, and it is okay to struggle."
+    }
+];
+
+let currentQuoteIndex = null;
+
+// DOM elements
+const quoteBtn = document.getElementById("quoteBtn");
+const explanationBtn = document.getElementById("explanationBtn");
+const quoteDisplay = document.getElementById("quoteDisplay");
+const explanationDisplay = document.getElementById("explanationDisplay");
+
+// Show a random quote
+quoteBtn.addEventListener('click', () => {
+    currentQuoteIndex = Math.floor(Math.random() * quotes.length);
+    quoteDisplay.innerHTML = quotes[currentQuoteIndex].text;
+    quoteDisplay.classList.remove("fade");
+    void quoteDisplay.offsetWidth;
+    quoteDisplay.classList.add("fade");
+
+    // Clear previous explanation
+    explanationDisplay.innerHTML = "";
+});
+
+// Show explanation of the current quote
+explanationBtn.addEventListener('click', () => {
+    if(currentQuoteIndex !== null) {
+        explanationDisplay.innerHTML = quotes[currentQuoteIndex].explanation;
+        explanationDisplay.classList.remove("fade");
+        void explanationDisplay.offsetWidth;
+        explanationDisplay.classList.add("fade");
+    } else {
+        explanationDisplay.innerHTML = "Click Tell me a quote first!";
+    }
+});
