@@ -1,19 +1,49 @@
 body {
-  background-color: #111;
-  color: white;
+  background-color: #0f0f0f;
+  color: #ffffff;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 800px;
   text-align: center;
-  padding: 40px;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
 
 button {
-  padding: 10px 15px;
-  margin: 10px;
+  padding: 12px 25px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000;
+  margin-bottom: 30px;
 }
 
-#output {
+button:hover {
+  background-color: #dddddd;
+}
+
+.quote-box {
   margin-top: 20px;
-  font-size: 18px;
+}
+
+#quoteText {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+#explanationText {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
 }
