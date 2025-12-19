@@ -21,7 +21,7 @@ const quotes = [
   },
   {
     quote: "We all are stranger creatures than when we all started out as kids, culture forbids ~Glowing Eyes (Regional at Best, 2011)",
-    explanation: "Being different is discouraged by society, but embracing that difference is powerful."
+    explanation: "I love how it says that we're creatures. It seems like a negative thing to be called, like something society would call anyone who doesn't want to live up to all the norms and standards, but we as the different ones, freaks, or creatures embrace it. Culture would not only forbid that we be creatures, but also that we wouldn't care to be called that. I'd like to think I was a pretty strange kid growing up, but I think I'm even stranger now that my mind is more developed and I am able to truly think for myself and become more informed without the obstruction of a society that's working against me. I know that my thoughts and opinions are unique to me and that Im not a sheep. My mind is no longer as easily molded as it was when I was much younger. And that's cool."
   },
   {
     quote: "Are you searching for purpose? Then write something, yeah it might be worthless ~Kitchen Sink (Regional at Best, 2011)",
